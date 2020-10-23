@@ -6,6 +6,8 @@
 
 `λ> decrypt private [Integers]`
 
+![alt text](https://i.imgur.com/kW8jrlC.jpg)
+
 # Details
 
 ### Key Generation
