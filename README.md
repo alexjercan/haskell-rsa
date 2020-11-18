@@ -23,7 +23,7 @@ private = (n, d)
 1. n is the product of two primes
 2. λ(n) is computed using Carmichael's totient function
 but in this case since p and q are primes we can use
-the lcm foruma
+the lcm formula
 3. e is computed such that λ(n) and e are coprime
 4. d is equal to the modular multiplicative inverse of λ(n)
 
