@@ -1,21 +1,16 @@
 module Main where
 
-import KeyGen ( computeN, computeE, computeD )
+import qualified RSA as R
+import Sieve (primes)
 
-keygen :: Integer -> Integer -> ((Integer, Integer), (Integer, Integer))
-keygen p q = ((n, e), (n, d))
-  where
-    n = computeN p q
-    e = computeE p q
-    d = computeD p q
+keygen :: Integral a => Int -> Int -> ((a, a), (a, a))
+keygen a b = R.keygen (primes !! a) (primes !! b)
 
-encrypt :: (Integer, Integer) -> [Integer] -> [Integer]
-encrypt _ [] = []
-encrypt (n, e) (m:ms) = m ^ e `mod` n : encrypt (n, e) ms
+encrypt :: (Integral a, Integral b) => (a, b) -> [a] -> [a]
+encrypt = R.encrypt
 
-decrypt :: (Integer, Integer) -> [Integer] -> [Integer]
-decrypt _ [] = []
-decrypt (n, d) (c:cs) = c ^ d `mod` n : decrypt (n, d) cs
+decrypt :: (Integral a, Integral b) => (a, b) -> [a] -> [a]
+decrypt = R.decrypt
 
 main :: IO ()
 main = undefined

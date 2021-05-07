@@ -2,18 +2,18 @@ module KeyGen where
 
 import Sieve (primes)
 
-computeN :: Integer -> Integer -> Integer
+computeN :: Num a => a -> a -> a
 computeN p q = p * q
 
-computeLambdaN :: Integer -> Integer -> Integer
+computeLambdaN :: Integral a => a -> a -> a
 computeLambdaN p q = lcm (p - 1) (q - 1)
 
-computeE :: Integer -> Integer -> Integer
+computeE :: Integral a => a -> a -> a
 computeE p q = head [x | x <- primes, x < lambdaN, gcd lambdaN x == 1]
   where
     lambdaN = computeLambdaN p q
 
-computeD :: Integer -> Integer -> Integer
+computeD :: Integral a => a -> a -> a
 computeD p q = modInverse a m
   where
     a = computeE p q

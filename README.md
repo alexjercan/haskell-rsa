@@ -1,12 +1,12 @@
 # Usage
 
-`λ> (public, private) = keygen (primes !! a) (primes !! b)`
+`λ> (public, private) = keygen Int Int`
 
-`λ> encrypt public [Integers]`
+`λ> encrypt public [Integral]`
 
-`λ> decrypt private [Integers]`
+`λ> decrypt private [Integral]`
 
-![alt text](https://i.imgur.com/kW8jrlC.jpg)
+![alt text](https://i.imgur.com/aaVWKLq.png)
 
 # Details
 
